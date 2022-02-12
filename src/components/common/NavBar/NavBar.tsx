@@ -5,24 +5,6 @@ import ButtonGroup from '@mui/material/ButtonGroup';
 import {StNav} from "./style";
 import {NavigateContext} from "../../../context/NavigateContext";
 
-// const linksToTournament = [
-//     {
-//         id: 1,
-//         url: '/openTournament',
-//         title: 'Open',
-//     },
-//     {
-//         id: 2,
-//         url: '/activeTournament',
-//         title: 'Active',
-//     },
-//     {
-//         id: 3,
-//         url: '/finishedTournament',
-//         title: 'Finished',
-//     }
-// ];
-
 const NavBar = () => {
     const {links} = React.useContext(NavigateContext);
     const { pathname } = useLocation();

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { linksToTournament, linksToCup } from '../constants/linksForNav';
 
 type TProps = {
     children: React.ReactNode
@@ -11,57 +13,37 @@ type TButton = {
 }
 
 type TValue = {
-    links:Array<TButton>|[],
-    setLinks:  React.Dispatch<React.SetStateAction<TButton[]>>
+        links: Array<TButton>,
+        setLinks: (value: Array<TButton>) => void,
+        isTournament: boolean,
+        setIsTournament:(value: boolean) => void,
+        handleChangeMode: () => void
 }
 
-const linksToTournament:Array<TButton> = [
-    {
-        id: 1,
-        url: '/openTournament',
-        title: 'Open',
-    },
-    {
-        id: 2,
-        url: '/activeTournament',
-        title: 'Active',
-    },
-    {
-        id: 3,
-        url: '/finishedTournament',
-        title: 'Finished',
-    }
-];
-
-// const linksToCup = [
-//     {
-//         id: 1,
-//         url: '/openCup',
-//         title: 'Open',
-//     },
-//     {
-//         id: 2,
-//         url: '/activeCup',
-//         title: 'Active',
-//     },
-//     {
-//         id: 3,
-//         url: '/finishedCup',
-//         title: 'Finished',
-//     }
-// ];
-
-export const NavigateContext = React.createContext([]);
+export const NavigateContext = React.createContext<TValue|any>(null);
 
 const NavigateProvider: React.FC<TProps> = ({ children}) => {
     const [links, setLinks] = useState(linksToTournament);
-    console.log(links);
-    const value: TValue = {
-        links,
-        setLinks
+    const [isTournament, setIsTournament] = useState(true);
+    const  navigate  = useNavigate();
+
+    const handleChangeMode = () => {
+        setIsTournament((prev) => !prev);
+        navigate(isTournament ? '/openCap' : '/openTournament');
     };
 
-    // @ts-ignore
+    React.useEffect(() =>{
+        setLinks(() => isTournament ? linksToTournament : linksToCup);
+    }, [isTournament]);
+
+    const value: TValue = {
+        links,
+        setLinks,
+        isTournament,
+        setIsTournament,
+        handleChangeMode
+    };
+
     return <NavigateContext.Provider value={value}>
         {children}
     </NavigateContext.Provider>;
