@@ -7,6 +7,7 @@ export const URL = {
     ERROR_INVITATION: '/errorInvitation',
     NEW_PASSWORD: '/newPassword',
     ERROR_FORGOT_PASSWORD: '/errorForgotPassword',
+    WELCOME: '/welcome'
 };
 export const BACKEND_URL = {
     ACCEPT_INVITATION: 'http://sluipgenius.pp.ua/api/accept-invitation',
