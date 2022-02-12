@@ -14,26 +14,10 @@ const FirstPages = () => {
                 <Logo/>
             </StLogo>
             <StyledFirstPageText>
-                <h3>Lorem ipsum dolor sit amet, consectetur adipisicing</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit. Animi assumenda beatae dolore doloribus ea illo
-                    laboriosam magnam nam, praesentium quia quod, rem soluta,
-                    sunt suscipit voluptatibus. Dolorem ducimus esse fugit ipsam
-                    minima modi numquam soluta? At, aut dolore eligendi est illum
-                    iure laudantium molestias natus necessitatibus nesciunt non
-                    quidem vitae?
-                    orem ipsum dolor sit amet, consectetur adipisicing
-                    elit. Animi assumenda beatae dolore doloribus ea illo
-                    laboriosam magnam nam, praesentium quia quod, rem soluta,
-                    sunt suscipit voluptatibus. Dolorem ducimus esse fugit ipsam
-                    minima modi numquam soluta? At, aut dolore eligendi est illum
-                    iure laudantium molestias natus necessitatibus nesciunt non
-                    orem ipsum dolor sit amet, consectetur adipisicing
-                    elit. Animi assumenda beatae dolore doloribus ea illo
-                    laboriosam magnam nam, praesentium quia quod, rem soluta,
-                    sunt suscipit voluptatibus. Dolorem ducimus esse fugit ipsam
-                    minima modi numquam soluta? At, aut dolore eligendi est illum
-                    iure laudantium molestias natus necessitatibus nesciunt non</p>
+                <h3>WELCOME GAMER!</h3>
+                <p>Simplify tournament management <br/>Join the millions
+                    of users who already trust Sluip Genius to manage their tournaments.<br/>
+                    Already more than 28,883,127 tournament grids have been created worldwide.</p>
                 <StyledSignIn>
                     <Link to={URL.MAIN_PAGE}>To begin</Link>
                 </StyledSignIn>
