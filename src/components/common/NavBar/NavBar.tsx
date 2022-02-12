@@ -1,52 +1,35 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-// import { AuthContext } from 'src/components/context/AuthContext';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import {StNav} from "./style";
+import {NavigateContext} from "../../../context/NavigateContext";
 
-const linksToTournament = [
-    {
-        id: 1,
-        url: '/openTournament',
-        title: 'Open',
-    },
-    {
-        id: 2,
-        url: '/activeTournament',
-        title: 'Active',
-    },
-    {
-        id: 3,
-        url: '/finishedTournament',
-        title: 'Finished',
-    }
-];
-
-// const linksToCup = [
+// const linksToTournament = [
 //     {
 //         id: 1,
-//         url: '/openCup',
+//         url: '/openTournament',
 //         title: 'Open',
 //     },
 //     {
 //         id: 2,
-//         url: '/activeCup',
+//         url: '/activeTournament',
 //         title: 'Active',
 //     },
 //     {
 //         id: 3,
-//         url: '/finishedCup',
+//         url: '/finishedTournament',
 //         title: 'Finished',
 //     }
 // ];
 
 const NavBar = () => {
+    const {links} = React.useContext(NavigateContext);
     const { pathname } = useLocation();
     return (
         <StNav>
             <ButtonGroup variant="contained" aria-label="outlined primary button group">
-                {linksToTournament.map(({ id, url, title }) => {
+                {links.map(({ id, url, title }) => {
                     return (
                         <Button key={id} variant={url === pathname ? "contained" : "outlined"}>
                             <NavLink key={id} to={url}>
