@@ -1,7 +1,7 @@
 import React from 'react';
 
 export type TInputDiv={
-    error?:boolean,
+    error?:string|null,
 }
 
 export type TProps = {
@@ -23,4 +23,18 @@ export type TAxiosBody={
     gender?:string,
     first_name?:string,
     last_name?:string,
+}
+
+export type TInput={
+    onChange:void,
+    error:string| null,
+    hintText:string,
+    text:string,
+    name?:string,
+    options?: any
+}
+
+export type TLabel = {
+    value: string,
+    label:string,
 }
