@@ -12,6 +12,7 @@ import { REG_EXP } from '../../constants/regExp';
 import Notification from "../common/Notification/Notification";
 import {NotificationContext} from "../../context/NotificationContent";
 import { HelperFunc } from '../../helpers/FormtInfo';
+import { TContext } from '../../Types/Types';
 
 const SignIn = () => {
     const {
@@ -23,9 +24,9 @@ const SignIn = () => {
     });
 
     const navigate = useNavigate();
-    // @ts-ignore
-    const {notification, showNotification} = useContext(NotificationContext);
 
+    // @ts-ignore
+    const {notification, showNotification} = useContext<TContext>(NotificationContext);
     return (
         <>
             { notification.type && <Notification message={notification.message} type={notification.type} />}
@@ -35,13 +36,13 @@ const SignIn = () => {
                 <h1>Log In</h1>
                 <StHeadLiner/>
                 <Controller
-                    name="email"
+                    name="login"
                     control={control}
-                    rules={{required: true, pattern: REG_EXP.EMAIL_MAIN_REG_EXP}}
+                    rules={{required: true, pattern: REG_EXP.LOGIN_REG_EXP}}
                     render={({field: {onChange}}) => {
-                        return <Input hintText={HINTS.EMAIL_HINT}
-                            text={TEXT_VALUES.EMAIL[0].toUpperCase()+TEXT_VALUES.EMAIL.slice(1)}
-                            onChange={onChange} error={getError(errors.email?.type, TEXT_VALUES.EMAIL)}/>;
+                        return <Input hintText={HINTS.LOGIN}
+                            text={TEXT_VALUES.LOGIN[0].toUpperCase()+TEXT_VALUES.LOGIN.slice(1)}
+                            onChange={onChange} error={getError(errors.login?.type, TEXT_VALUES.LOGIN)}/>;
                     }}/>
                 <Controller
                     name="password"

@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { GlobalStyle } from './GlobalStyles';
-import reportWebVitals from './reportWebVitals';
 import {NotificationContextProvider} from "./context/NotificationContent";
 
 ReactDOM.render(
@@ -15,5 +14,3 @@ ReactDOM.render(
     </BrowserRouter>,
     document.getElementById('root')
 );
-
-reportWebVitals();
