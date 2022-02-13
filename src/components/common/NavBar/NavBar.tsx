@@ -2,18 +2,22 @@ import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import {StNav} from "./style";
-import {NavigateContext} from "../../../context/NavigateContext";
+import Box from '@mui/material/Box';
+import {links} from "../../../constants/linksForNav";
 
 const NavBar = () => {
-    const {links} = React.useContext(NavigateContext);
     const { pathname } = useLocation();
     return (
-        <StNav>
-            <ButtonGroup variant="contained" aria-label="outlined primary button group">
+        <Box sx={{display: 'flex', '& > *': {m: 1,},}}>
+            <ButtonGroup
+                orientation="vertical"
+                aria-label="vertical contained button group"
+                variant="contained"
+            >
                 {links.map(({ id, url, title }) => {
                     return (
-                        <Button key={id} variant={url === pathname ? "contained" : "outlined"}>
+                        // <Button key={id} variant={url === pathname ? "contained" : "outlined"}>
+                        <Button key={id} disabled={url === pathname} size={'large'}>
                             <NavLink key={id} to={url}>
                                 {title}
                             </NavLink>
@@ -21,7 +25,8 @@ const NavBar = () => {
                     );
                 })}
             </ButtonGroup>
-        </StNav>
-    );};
+        </Box>
+    );
+};
 
 export default NavBar;

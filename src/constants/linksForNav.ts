@@ -4,38 +4,43 @@ type TButton = {
     title: string,
 };
 
-export const linksToTournament: Array<TButton> = [
+export const links: Array<TButton> = [
     {
         id: 1,
-        url: '/openTournament',
-        title: 'Open',
+        url: '/tournamentList',
+        title: 'Tournaments List',
     },
     {
         id: 2,
-        url: '/activeTournament',
-        title: 'Active',
+        url: '/createTournament',
+        title: 'Create Tournament',
     },
     {
         id: 3,
-        url: '/finishedTournament',
-        title: 'Finished',
+        url: '/players',
+        title: 'Players',
+    },
+    {
+        id: 4,
+        url: '/adminPage',
+        title: 'Admin',
     }
 ];
 
-export const linksToCup: Array<TButton> = [
-    {
-        id: 1,
-        url: '/openCap',
-        title: 'Open',
-    },
-    {
-        id: 2,
-        url: '/activeCap',
-        title: 'Active',
-    },
-    {
-        id: 3,
-        url: '/finishedCap',
-        title: 'Finished',
-    }
-];
+// export const linksToCup: Array<TButton> = [
+//     {
+//         id: 1,
+//         url: '/openCap',
+//         title: 'Open',
+//     },
+//     {
+//         id: 2,
+//         url: '/activeCap',
+//         title: 'Active',
+//     },
+//     {
+//         id: 3,
+//         url: '/finishedCap',
+//         title: 'Finished',
+//     }
+// ];

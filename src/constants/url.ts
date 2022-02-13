@@ -8,12 +8,10 @@ export const URL = {
     NEW_PASSWORD: '/newPassword',
     ERROR_FORGOT_PASSWORD: '/errorForgotPassword',
 
-    OPEN_TOURNAMENT:'/openTournament',
-    ACTIVE_TOURNAMENT: '/activeTournament',
-    FINISHED_TOURNAMENT: '/finishedTournament',
-    OPEN_CAP: '/openCap',
-    ACTIVE_CAP: '/activeCap',
-    FINISHED_CAP: '/finishedCap',
+    TOURNAMENT_LIST:'/tournamentList',
+    CREATE_TOURNAMENT: '/createTournament',
+    PLAYERS: '/players',
+    ADMIN_PAGE: '/adminPage',
 };
 
 export const BACKEND_URL = {
