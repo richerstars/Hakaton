@@ -8,3 +8,7 @@ export const StyledHeader = styled.header`
   padding: 20px 0;
   height: 144px;
 `;
+
+export const StyledBtn = styled.div`
+height: 70px;
+`;
