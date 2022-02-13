@@ -2,7 +2,11 @@ import styled from 'styled-components';
 import {COLORS} from "../../../constants/colors";
 
 export const StyledParagraph = styled.p`
+  align-items: center;
   font-size: 20px;
+  text-align: center;
+  justify-content: center;
+  display: flex;
   & a{
     width: 120px;
     height: 31px;

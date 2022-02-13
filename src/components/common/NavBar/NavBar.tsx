@@ -3,12 +3,12 @@ import { NavLink, useLocation } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Box from '@mui/material/Box';
-import {links} from "../../../constants/linksForNav";
+import { links } from "../../../constants/linksForNav";
 
 const NavBar = () => {
     const { pathname } = useLocation();
     return (
-        <Box sx={{display: 'flex', '& > *': {m: 1,},}}>
+        <Box sx={{ display: 'flex', '& > *': { m: 1, }, }}>
             <ButtonGroup
                 orientation="vertical"
                 aria-label="vertical contained button group"
