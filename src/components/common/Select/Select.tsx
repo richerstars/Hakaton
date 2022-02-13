@@ -1,11 +1,26 @@
 import React from 'react';
 import Select from 'react-select';
+// @ts-ignore
 import { ReactComponent as HelpIcon } from '../../../icons/help.svg';
 import { StyledSelectWrapper } from './styled';
 import { StIcon, StyledLabel, StInputItem, StError } from '../Input/styled';
+import { COLORS } from '../../../constants/colors';
 
-const Selection = ({ onChange, options, hintText,text,error }: any) => {
+const Selection = ({ onChange, options, hintText, text, error }: any) => {
     const handleChange = (value: any) => onChange(value.label);
+
+    const customTheme = (theme:any) => {
+        return {...theme,
+            colors: {
+                ...theme.colors,
+                primary25: `${COLORS.SEMI_PRIMARY_COLOR}`,
+                primary: `${COLORS.PRIMARY_COLOR}`,
+                neutral50: `${COLORS.BLACK}`,
+                neutral0: `${COLORS.PRIMARY_COLOR_LIGHT}`,
+            },
+        };
+    };
+
     return (
         <StyledSelectWrapper>
             <StyledLabel>{text}</StyledLabel>
@@ -14,16 +29,7 @@ const Selection = ({ onChange, options, hintText,text,error }: any) => {
                     className="test"
                     options={options}
                     onChange={handleChange}
-                    theme={(theme) => ({
-                        ...theme,
-                        borderRadius: 2,
-                        colors: {
-                            ...theme.colors,
-                            primary25: 'lightgreen',
-                            primary: 'rgba(47,100,90,1)',
-                            danger:'blue',
-                        },
-                    })}
+                    theme={customTheme}
                 />
                 <StIcon>
                     <HelpIcon title={hintText || null}/>

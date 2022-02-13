@@ -12,6 +12,7 @@ export const TEXT_VALUES = {
     EMAIL: 'email',
     PASSWORD: 'password',
     RE_PASSWORD: 'RePassword',
+    LOGIN: 'login',
 };
 export const HINTS = {
     ADDITIONAL_INFO_NAMES: '2+ letters',
@@ -19,4 +20,5 @@ export const HINTS = {
     GENDER_HINT: 'Select your gender',
     EMAIL_HINT: 'Standard email settings',
     PASSWORD_HINT: '8-20 symbols, 1 upper letter, 1 number',
+    LOGIN: 'Max symbols from 1 to 19 symbols and no Special symbols',
 };

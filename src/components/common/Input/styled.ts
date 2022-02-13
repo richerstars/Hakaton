@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import {COLORS} from "../../../constants/colors";
+import { COLORS } from "../../../constants/colors";
+import { TInputDiv } from '../../../Types/Types';
 
-// eslint-disable-next-line no-undef
-export const StyledInput = styled.input<any>`
+export const StyledInput = styled.input<TInputDiv>`
   width: 100%;
   height: 40px;
   border-radius: 2px;
@@ -30,14 +30,19 @@ export const StInputContainer = styled.div`
   margin-top: 20px;
 `;
 
-// eslint-disable-next-line no-undef
-export const StInputItem = styled.div<any>`
+export const StInputItem = styled.div<TInputDiv>`
   display: flex;
-
+  color: black;
+  
   .test {
     width: 100%;
     border: ${({ error }) => error ? `2px solid ${COLORS.ERROR_COLOR}` : 'none'};
-  }`;
+  }
+  .css-4ljt47-MenuList{
+    background-color: ${COLORS.WHITE};
+    border-radius: 5px;
+  }
+`;
 export const StIcon = styled.div`
   width: 40px;
   display: grid;
@@ -68,10 +73,11 @@ export const StSubmitInput = styled.input`
   font-weight: bold;
   letter-spacing: 3px;
   box-shadow: 10px 10px 10px -10px ${COLORS.SHADOW};
- 
-  &:disabled{
+
+  &:disabled {
     cursor: not-allowed;
   }
+
   &:hover {
     background-color: ${COLORS.SEMI_PRIMARY_COLOR_SEC};
   }

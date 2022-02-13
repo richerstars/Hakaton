@@ -25,13 +25,13 @@ const ForgotPassword = () => {
     const navigate = useNavigate();
     // @ts-ignore
     const { notification, showNotification } = useContext(NotificationContext);
-
     return (
         <>
             {notification.type && <Notification message={notification.message} type={notification.type}/>}
             <StForm
                 onSubmit={handleSubmit((values) => {
-                    HelperFunc(values, showNotification, navigate,BACKEND_URL.FORGOT_PASSWORD,URL.DEFAULT_PAGE);})}>
+                    HelperFunc(values, showNotification, navigate, BACKEND_URL.FORGOT_PASSWORD, URL.DEFAULT_PAGE);
+                })}>
                 <h1>Forgot Password</h1>
                 <StHeadLiner/>
                 <Controller

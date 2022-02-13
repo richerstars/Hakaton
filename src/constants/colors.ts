@@ -12,4 +12,5 @@ export const COLORS = {
     PRIMARY_COLOR_LIGHT: 'rgba(124, 94, 209, 0.67)',
     HR_DARK: 'rgba(255,255,255,1)',
     HR_LIGHT: 'rgba(255,255,255,.2)',
+    BLACK: '#000',
 };
