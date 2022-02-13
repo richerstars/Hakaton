@@ -1,22 +1,30 @@
 import * as React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import { StyledTableRow, StyledTableCell } from './styled';
-import { StTableWrapper } from './styledMain';
-import { BACKEND_URL } from '../../../constants/url';
+import { DataGrid } from '@mui/x-data-grid';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { BACKEND_URL } from '../../../constants/url';
+import { useEffect,useState } from 'react';
+import { StTableDiv } from './styled';
 
+const columns = [
+    { field: 'name', headerName: 'Name', width: 200 },
+    { field: 'description', headerName: 'Tournament description', width: 200 },
+    { field: 'mode', headerName: 'Mode',width: 140 },
+    { field: 'place', headerName: 'Place', width: 130 },
+    { field: 'start_date', headerName: 'Start competition', width: 200 },
+    { field: 'last_registration_date', headerName: 'End of registration', width: 200 },
+    { field: 'level', headerName: 'Level of tournament', width: 200 },
+    { field: 'players', headerName: 'Amount of players', width: 200 },
+    { field: 'number_of_participants', headerName: 'All quantity of players', width: 200 },
+    { field: 'scenario', headerName: 'Scenario', width: 200 },
+    { field: 'status', headerName: 'Status', width: 200 }
+];
 
 const ActiveTournament = () => {
+    const [tableData,setTableData]=useState([]);
     const getTournamets = async () => {
         try {
-            const {data} = await axios.get(BACKEND_URL.TOURNAMENT_URL, { params: { status: 'active' } });
-            setData(data);
+            const {data} = await axios.get(BACKEND_URL.TOURNAMENT_URL, { params: { status: 'open',perPage: 100 } });
+            setTableData(data);
         }catch (error) {
             return false;
         }
@@ -24,42 +32,15 @@ const ActiveTournament = () => {
     useEffect(() => {
         getTournamets();
     },[]);
-    const [data,setData]=useState([]);
     return (
-        <StTableWrapper>
-            <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 700 }} aria-label="customized table">
-                    <TableHead>
-                        <TableRow>
-                            <StyledTableCell>Title room</StyledTableCell>
-                            <StyledTableCell align="right">Description</StyledTableCell>
-                            <StyledTableCell align="right">LvL players</StyledTableCell>
-                            <StyledTableCell align="right">Mode</StyledTableCell>
-                            <StyledTableCell align="right">Quantity of members</StyledTableCell>
-                            <StyledTableCell align="right">City</StyledTableCell>
-                            <StyledTableCell align="right">Registrated</StyledTableCell>
-                            <StyledTableCell align="right">Status</StyledTableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {data.map((row:any) => (
-                            <StyledTableRow key={row.name}>
-                                <StyledTableCell component="th" scope="row">
-                                    {row.name}
-                                </StyledTableCell>
-                                <StyledTableCell align="right">{row.description}</StyledTableCell>
-                                <StyledTableCell align="right">{row.level}</StyledTableCell>
-                                <StyledTableCell align="right">{row.mode}</StyledTableCell>
-                                <StyledTableCell align="right">{row.number_of_participants}</StyledTableCell>
-                                <StyledTableCell align="right">{row.place}</StyledTableCell>
-                                <StyledTableCell align="right">{row.players}</StyledTableCell>
-                                <StyledTableCell align="right">{row.status}</StyledTableCell>
-                            </StyledTableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </StTableWrapper>
+        <StTableDiv>
+            <DataGrid
+                rows={tableData}
+                columns={columns}
+                pageSize={12}
+                rowsPerPageOptions={[12]}
+            />
+        </StTableDiv>
     );
 };
 export default ActiveTournament;
