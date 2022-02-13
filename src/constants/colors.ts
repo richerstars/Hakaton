@@ -1,6 +1,6 @@
 export const COLORS = {
     PRIMARY_COLOR: 'rgba(25, 118, 210, 0.72)',
-    SEMI_PRIMARY_COLOR: 'rgba(108,108,108,0.8)',
+    SEMI_PRIMARY_COLOR: '#828ADB',
     PRIMARY_INPUT_COLOR: 'rgba(255, 255, 255, .5)',
     INPUT_FOCUS: 'rgba(255, 255, 255, .8)',
     WHITE: '#fff',

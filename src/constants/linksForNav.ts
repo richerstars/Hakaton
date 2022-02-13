@@ -26,7 +26,18 @@ export const links: Array<TButton> = [
         title: 'Admin',
     }
 ];
-
+export const admin: Array<TButton> = [
+    {
+        id: 1,
+        url: '/tournamentList',
+        title: 'sdf',
+    },
+    {
+        id: 4,
+        url: '/adminPage',
+        title: 'Admin',
+    }
+];
 // export const linksToCup: Array<TButton> = [
 //     {
 //         id: 1,

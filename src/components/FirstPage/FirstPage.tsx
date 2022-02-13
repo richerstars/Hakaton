@@ -17,7 +17,7 @@ const FirstPages = () => {
                     Whether you run grassroots tournaments or professional leagues, Sluip Genius makes it all possible
                 </p>
                 <StyledSignIn>
-                    <Link to={URL.MAIN_PAGE}>TO BEGIN</Link>
+                    <Link to={URL.SIGN_IN}>TO BEGIN</Link>
                 </StyledSignIn>
             </StyledFirstPageText>
         </StyledFirstPage>

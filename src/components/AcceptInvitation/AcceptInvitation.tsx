@@ -44,7 +44,7 @@ const AcceptInvitation = () => {
                         last_name: values.last_name,
                         date_of_birthday: res,
                         gender: values.gender,
-                    },showNotification, navigate,BACKEND_URL.ACCEPT_INVITATION,URL.MAIN_PAGE,token);
+                    },showNotification, navigate,BACKEND_URL.ACCEPT_INVITATION,URL.SIGN_IN,token);
                 })}>
                 <h1>Additional Information</h1>
                 <StHeadLiner/>

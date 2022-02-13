@@ -33,7 +33,7 @@ const NewPassword = () => {
                 onSubmit={handleSubmit((values) => {
                     values.password === values.RePassword
                         ? HelperTokenBackFunc({password: values.password},
-                            showNotification, navigate,BACKEND_URL.NEW_PASSWORD,URL.DEFAULT_PAGE,token)
+                            showNotification, navigate,BACKEND_URL.NEW_PASSWORD,URL.SIGN_IN,token)
                         : showNotification({ type: "fail", message: "Password not same"});
                 })}>
                 <h1>New Password</h1>

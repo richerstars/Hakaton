@@ -6,7 +6,7 @@ networks:
 
 services:
   main:
-    container_name: messanger
+    container_name: messanger-front
     restart: always
     build: .
     ports:

@@ -1,7 +1,7 @@
 export const URL = {
     SIGN_UP: '/signUp',
     DEFAULT_PAGE: '/',
-    MAIN_PAGE: '/main',
+    SIGN_IN: '/signIn',
     FORGOT_PASSWORD: '/forgotPassword',
     ACCEPT_INVITATION: '/acceptInvitation',
     ERROR_INVITATION: '/errorInvitation',

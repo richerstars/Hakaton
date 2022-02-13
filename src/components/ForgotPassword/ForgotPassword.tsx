@@ -30,7 +30,7 @@ const ForgotPassword = () => {
             {notification.type && <Notification message={notification.message} type={notification.type}/>}
             <StForm
                 onSubmit={handleSubmit((values) => {
-                    HelperFunc(values, showNotification, navigate, BACKEND_URL.FORGOT_PASSWORD, URL.DEFAULT_PAGE);
+                    HelperFunc(values, showNotification, navigate, BACKEND_URL.FORGOT_PASSWORD, URL.SIGN_IN);
                 })}>
                 <h1>Forgot Password</h1>
                 <StHeadLiner/>
@@ -47,7 +47,7 @@ const ForgotPassword = () => {
                 <StSubmitInput type="submit" value={TEXT_VALUES.SUBMIT_VALUE}/>
                 <StyledParagraphSignOut>
                     Want to Log In?
-                    <Link to={URL.DEFAULT_PAGE}>Log In</Link>
+                    <Link to={URL.SIGN_IN}>Log In</Link>
                 </StyledParagraphSignOut>
             </StForm>
         </>
