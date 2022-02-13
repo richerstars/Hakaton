@@ -7,7 +7,6 @@ export const URL = {
     ERROR_INVITATION: '/errorInvitation',
     NEW_PASSWORD: '/newPassword',
     ERROR_FORGOT_PASSWORD: '/errorForgotPassword',
-
     TOURNAMENT_LIST:'/tournamentList',
     CREATE_TOURNAMENT: '/createTournament',
     PLAYERS: '/players',
