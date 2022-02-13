@@ -30,7 +30,7 @@ const SignUp = () => {
                 onSubmit={handleSubmit((values) => {
                     values.password === values.RePassword
                         ? HelperFunc({ login: values.login,email: values.email, password: values.password },
-                            showNotification, navigate,BACKEND_URL.SIGN_UP,URL.DEFAULT_PAGE)
+                            showNotification, navigate,BACKEND_URL.SIGN_UP,URL.SIGN_IN)
                         : showNotification({ type: "fail", message: "Password not same" });
                 })}>
                 <h1>Sign Up</h1>

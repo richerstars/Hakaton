@@ -4,8 +4,9 @@ import {COLORS} from "../../constants/colors";
 export const StyledFirstPage = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: rgba(39, 39, 39, 0.67);
-  border-radius: 5px;
+  background-color: ${COLORS.PRIMARY_COLOR_LIGHT};
+  box-shadow: 0px 1px 20px 9px ${COLORS.SHADOW_MAIN};
+  border-radius: 15px;
   color: #ffffff;
 `;
 
@@ -16,8 +17,8 @@ export const StyledFirstPageText = styled.div`
   align-items: center;
 
   padding: 25px;
-  margin: 10px auto;
-  max-width: calc(100vw - 496px);
+  margin: 10px;
+  max-width: 900px;
   & h3 {
     margin: 10px;
     text-align: center;
@@ -32,12 +33,12 @@ export const StyledFirstPageText = styled.div`
 export const StyledSignIn = styled.div`
   display: flex;
   flex-direction: column;
-justify-content: center;
+  justify-content: center;
   cursor: pointer;
   margin-top: 20px;
-  padding: 10px;
-  height: 40px
-  font-size: 18px;
+  padding: 10px 40px;
+  height: 40px;
+  font-size: 40px;
   border: none;
   background-color: ${COLORS.PRIMARY_COLOR};
   border-radius: 5px;
@@ -54,4 +55,12 @@ justify-content: center;
   &:hover {
     background-color: ${COLORS.SEMI_PRIMARY_COLOR_SEC};
   }
+`;
+
+export const StH3 = styled.h3`
+  font-size: 30px;
+`;
+
+export const StP = styled.p`
+  font-size: 25px;
 `;

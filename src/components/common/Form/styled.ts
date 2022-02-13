@@ -20,4 +20,5 @@ export const StForm = styled.form`
   width: 450px;
   margin: 0 auto;
   color: ${COLORS.WHITE};
+  border-radius: 20px;
 `;
