@@ -1,24 +1,21 @@
 import React, {useState} from "react";
+import {TProps,TNotification} from '../Types/Types';
 const Context = React.createContext({});
-
-type TProps = {
-    children: React.ReactNode
-};
 
 const NotificationContextProvider:React.FC<TProps> = ({children}) => {
     const [state, setState] = useState ({
-        type: '', //"sucess" | "fail"
+        type: '',
         message: '',
     });
 
-    const showNotification = ({type, message}:any) => {
+    const showNotification = ({type, message}:TNotification):void => {
         setState({type, message});
         setTimeout(clearNotification, 3000);
     };
 
-    const clearNotification = () => {
+    const clearNotification = ():void => {
         setState({
-            type: '', //"sucess" | "fail"
+            type: '',
             message: '',
         });
     };

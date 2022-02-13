@@ -29,12 +29,21 @@ const SignUp = () => {
             <StForm
                 onSubmit={handleSubmit((values) => {
                     values.password === values.RePassword
-                        ? HelperFunc({ email: values.email, password: values.password },
+                        ? HelperFunc({ login: values.login,email: values.email, password: values.password },
                             showNotification, navigate,BACKEND_URL.SIGN_UP,URL.DEFAULT_PAGE)
                         : showNotification({ type: "fail", message: "Password not same" });
                 })}>
                 <h1>Sign Up</h1>
                 <StHeadLiner/>
+                <Controller
+                    name="login"
+                    control={control}
+                    rules={{ required: true, pattern: REG_EXP.LOGIN_REG_EXP }}
+                    render={({ field: { onChange } }) => {
+                        return <Input hintText={HINTS.LOGIN}
+                            text={TEXT_VALUES.LOGIN[0].toUpperCase()+TEXT_VALUES.LOGIN.slice(1)}
+                            onChange={onChange} error={getError(errors.login?.type, TEXT_VALUES.LOGIN)}/>;
+                    }}/>
                 <Controller
                     name="email"
                     control={control}

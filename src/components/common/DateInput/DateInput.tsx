@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { getMonth, getYear } from 'date-fns';
 import { StDatepickerWrapper } from './styled';
+// @ts-ignore
 import { ReactComponent as HelpIcon } from '../../../icons/help.svg';
 import { StIcon, StyledLabel, StInputItem, StError } from '../Input/styled';
 
@@ -41,7 +42,6 @@ const months = [
 
 const DateInput = ({ onChange, value, hintText, text, error }: any) => {
     const handleChange = (date: Date) => onChange(date);
-    // console.log(date);
     return (
         <StDatepickerWrapper error={error}>
             <StyledLabel>{text}</StyledLabel>

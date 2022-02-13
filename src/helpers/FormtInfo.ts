@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { TAxiosBody } from '../Types/Types';
 
-export const HelperFunc = async (body: any, contextFunc: any, navLink: any, linkReq:any, linkRedir:any) => {
+export const HelperFunc = async (body: TAxiosBody, contextFunc: any, navLink:any, linkReq:string, linkRedir:string) => {
     try {
         const { data: {data} } =await axios.post(linkReq, body);
         contextFunc({ type: "success", message: `${data}` });
@@ -10,8 +11,8 @@ export const HelperFunc = async (body: any, contextFunc: any, navLink: any, link
         contextFunc({ type: "fail", message: `${error.response.data.data}` });
     }
 };
-export const HelperTokenBackFunc = async (body: any, contextFunc: any, navLink: any, linkReq:any, linkRedir:any, 
-    token: any) => {
+export const HelperTokenBackFunc = async (body: TAxiosBody, 
+    contextFunc: any, navLink: any, linkReq:string, linkRedir:string, token: string|null) => {
     try {
         const { data: {data} } = await axios({
             method: 'post',
