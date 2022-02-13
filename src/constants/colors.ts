@@ -1,5 +1,5 @@
 export const COLORS = {
-    PRIMARY_COLOR: 'rgba(233, 21, 186, 0.72)',
+    PRIMARY_COLOR: 'rgba(25, 118, 210, 0.72)',
     SEMI_PRIMARY_COLOR: 'rgba(108,108,108,0.8)',
     PRIMARY_INPUT_COLOR: 'rgba(255, 255, 255, .5)',
     INPUT_FOCUS: 'rgba(255, 255, 255, .8)',
@@ -7,7 +7,7 @@ export const COLORS = {
     ERROR_COLOR: '#dc1414',
     PRIMARY_SELECT_COLOR: '#25291b',
     HOVER_COLOR_PARAGRAPH: 'rgba(255, 255, 255, 0.7)',
-    SEMI_PRIMARY_COLOR_SEC: 'rgba(255,161,250,0.72)',
+    SEMI_PRIMARY_COLOR_SEC: 'rgba(7,26,137,0.72)',
     SHADOW: 'rgba(0, 0, 0, 0.3)',
     PRIMARY_COLOR_LIGHT: 'rgba(124, 94, 209, 0.67)',
     HR_DARK: 'rgba(255,255,255,1)',
