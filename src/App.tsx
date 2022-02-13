@@ -11,15 +11,12 @@ import AcceptInvitation from './components/AcceptInvitation/AcceptInvitation';
 import ErrorForgotPassword from './components/ErrorForgotPassword/ErrorForgotPassword';
 import ErrorInvitation from './components/ErrorInvitation/ErrorInvitation';
 import MainLayout from './components/MainLayout/MainLayout';
-import Main from './components/Main/Main';
 import LayoutPages from "./components/LayoutPages/LayoutPages";
 import {URL} from './constants/url';
-import ActiveCap from "./components/Caps/ActiveCap/ActiveCap";
-import FinishedCap from "./components/Caps/FinishedCap/FinishedCap";
-import OpenCap from "./components/Caps/OpenCap/OpenCap";
-import OpenTournament from "./components/Tournaments/OpenTournament/OpenTournament";
-import ActiveTournament from "./components/Tournaments/ActiveTournament/ActiveTournament";
-import FinishedTournament from "./components/Tournaments/FinishedTournament/FinishedTournament";
+import TournamentList from "./components/pages/TournamentList/TournamentList";
+import CreateTournament from "./components/pages/CreateTournament/CreateTournament";
+import Players from "./components/pages/Players/Players";
+import AdminPage from "./components/pages/AdminPage/AdminPage";
 
 const App = () =>  (
     <Routes>
@@ -33,14 +30,11 @@ const App = () =>  (
             <Route path={URL.ERROR_FORGOT_PASSWORD} element={<ErrorForgotPassword />} />
         </Route>
         <Route element={<LayoutPages/>}>
-            <Route path={URL.OPEN_TOURNAMENT} element={<OpenTournament/>}/>
-            <Route path={URL.ACTIVE_TOURNAMENT} element={<ActiveTournament/>}/>
-            <Route path={URL.FINISHED_TOURNAMENT} element={<FinishedTournament/>}/>
-            <Route path={URL.OPEN_CAP} element={<OpenCap/>}/>
-            <Route path={URL.ACTIVE_CAP} element={<ActiveCap/>}/>
-            <Route path={URL.FINISHED_CAP} element={<FinishedCap/>}/>
+            <Route path={URL.TOURNAMENT_LIST} element={<TournamentList/>}/>
+            <Route path={URL.CREATE_TOURNAMENT} element={<CreateTournament/>}/>
+            <Route path={URL.PLAYERS} element={<Players/>}/>
+            <Route path={URL.ADMIN_PAGE} element={<AdminPage/>}/>
         </Route>
-        <Route path={URL.MAIN_PAGE} element={<Main/>}/>
     </Routes>
 );
 

@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import {COLORS} from "../../../constants/colors";
 
 export const StyledParagraph = styled.p`
-  margin-top: 30px;
   font-size: 20px;
   & a{
     width: 120px;

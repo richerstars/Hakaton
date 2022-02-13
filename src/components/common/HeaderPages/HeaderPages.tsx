@@ -1,19 +1,29 @@
 import React from 'react';
 import Logo from '../Logo/Logo';
-import { StyledHeader } from './styled';
+import {StWrapperMode, StyledHeader} from './styled';
 import Paragraph from '../Paragraph/Paragraph';
+// import NavBar from "../NavBar/NavBar";
+import Button from '@mui/material/Button';
+// import {NavigateContext} from "../../../context/NavigateContext";
 
 export interface IHeader {
     text: string,
     link: string,
 }
 
-const Header = ({text, link}: IHeader) => (
-    <StyledHeader>
+const HeaderPages = ({text, link}: IHeader) => {
 
-        <Logo/>
-        <Paragraph text={text} link={link} />
-    </StyledHeader>
-);
+    // const { handleChangeMode } = React.useContext(NavigateContext);
+    return(
+        <StyledHeader>
+            {/*<NavBar/>*/}
+            <Logo/>
+            <StWrapperMode>
+                <Button variant="contained">Mode</Button>
+            </StWrapperMode>
+            <Paragraph text={text} link={link} />
+        </StyledHeader>
+    );
+};
 
-export default Header;
+export default HeaderPages;

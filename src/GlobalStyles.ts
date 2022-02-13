@@ -6,6 +6,11 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+  
+  a {
+    text-decoration: none;
+  }
+  
   body {
     background: rgba(47,100,90,1);
     background: linear-gradient(
