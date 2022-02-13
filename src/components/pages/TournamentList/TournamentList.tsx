@@ -10,9 +10,9 @@ const columns = [
     { field: 'description', headerName: 'Tournament description', width: 200 },
     { field: 'mode', headerName: 'Mode',width: 140 },
     { field: 'place', headerName: 'Place', width: 130 },
-    { field: 'level', headerName: 'Level of tournament', width: 170 },
-    { field: 'players', headerName: 'Amount of players', width: 150 },
-    { field: 'number_of_participants', headerName: 'All players', width: 100 },
+    { field: 'level', headerName: 'Level', width: 170 },
+    { field: 'players', headerName: 'Amount ', width: 150 },
+    { field: 'number_of_participants', headerName: 'Players', width: 100 },
     { field: 'scenario', headerName: 'Scenario', width: 180 },
     { field: 'status', headerName: 'Status', width: 100 }
 ];

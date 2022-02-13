@@ -1,12 +1,14 @@
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import {useLocation, useNavigate} from 'react-router-dom';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Box from '@mui/material/Box';
-import { admin, links } from "../../../constants/linksForNav";
+import {linkForAdmin, linkForUser} from "../../../constants/linksForNav";
 
 const NavBar = () => {
+    const navigate = useNavigate();
     const { pathname } = useLocation();
+    const links = (document.cookie === 'role=user') ? linkForUser: linkForAdmin;
     return (
         <Box sx={{ display: 'flex', '& > *': { m: 1, }, }}>
             <ButtonGroup
@@ -14,25 +16,18 @@ const NavBar = () => {
                 aria-label="vertical contained button group"
                 variant="contained"
             >
-                { pathname !== pathname ?
+                { (document.cookie.length > 6) &&
                     (links.map(({ id, url, title }) => {
                         return (
-                                // <Button key={id} variant={url === pathname ? "contained" : "outlined"}>
-                            <Button key={id} disabled={url === pathname} size={'large'}>
-                                <NavLink key={id} to={url}>
-                                    {title}
-                                </NavLink>
+                            <Button
+                                key={id}
+                                disabled={url === pathname}
+                                size={'large'}
+                                onClick={() => navigate(url)}
+                            >
+                                {title}
                             </Button>
-                        );
-                    }))
-                    :(admin.map(({ id, url, title }) => {
-                        return (
-                                // <Button key={id} variant={url === pathname ? "contained" : "outlined"}>
-                            <Button key={id} disabled={url === pathname} size={'large'}>
-                                <NavLink key={id} to={url}>
-                                    {title}
-                                </NavLink>
-                            </Button>
+
                         );
                     }))
                 }

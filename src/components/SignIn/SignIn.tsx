@@ -11,7 +11,7 @@ import { HINTS, TEXT_VALUES } from '../../constants/textValues';
 import { REG_EXP } from '../../constants/regExp';
 import Notification from "../common/Notification/Notification";
 import {NotificationContext} from "../../context/NotificationContent";
-import { HelperFunc } from '../../helpers/FormtInfo';
+import {HelperRole} from '../../helpers/FormtInfo';
 import { TContext } from '../../Types/Types';
 
 const SignIn = () => {
@@ -32,7 +32,7 @@ const SignIn = () => {
             { notification.type && <Notification message={notification.message} type={notification.type} />}
             <StForm
                 onSubmit={handleSubmit((values) => {
-                    HelperFunc(values, showNotification, navigate,BACKEND_URL.SIGN_IN,URL.TOURNAMENT_LIST);})}>
+                    HelperRole(values, showNotification, navigate,BACKEND_URL.SIGN_IN,URL.TOURNAMENT_LIST);})}>
                 <h1>Log In</h1>
                 <StHeadLiner/>
                 <Controller

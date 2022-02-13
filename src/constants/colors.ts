@@ -13,4 +13,8 @@ export const COLORS = {
     HR_DARK: 'rgba(255,255,255,1)',
     HR_LIGHT: 'rgba(255,255,255,.2)',
     BLACK: '#000',
+    BACKGROUND_MAIN: 'rgb(131, 139, 223, 0.35)',
+    SHADOW_MAIN: '#3b5183',
+    TOP_LINEAR:'rgba(68, 50, 179, 0.8)',
+    BOTTOM_LINEAR: 'rgba(187, 42, 223, 0.64)',
 };
