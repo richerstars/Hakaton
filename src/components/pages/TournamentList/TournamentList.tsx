@@ -3,11 +3,9 @@ import { DataGrid } from '@mui/x-data-grid';
 import axios from 'axios';
 import { BACKEND_URL } from '../../../constants/url';
 import { useEffect, useState } from 'react';
-import { StTableDiv } from './styled';
 import { COLORS } from '../../../constants/colors';
-import { useEffect,useState } from 'react';
-import {StTableDiv, StWrapperInput} from './styled';
-import TextField from '@mui/material/TextField';
+import {StTableDiv} from './styled';
+// import TextField from '@mui/material/TextField';
 
 const columns = [
     { field: 'id', headerName: 'ID', width: 100},
@@ -36,16 +34,15 @@ const TournamentList = ({ theme }: any) => {
         getTournamets();
     }, []);
     return (
-        <StWrapperInput>
-            {/*<TextField id="outlined-basic" label="Outlined" variant="outlined" />*/}
-
+       
         <StTableDiv>
             <DataGrid
                 sx={{
                     borderColor: `${theme === 'light'
                         ? `${COLORS.BACKGROUND_HEADER_LIGHT}`
                         : `${COLORS.SEMI_PRIMARY_COLOR_SEC}`}`,
-                    backgroundColor: `${theme === 'light' ? `${COLORS.BACKGROUND_MAIN}` : `${COLORS.TABLE_GRID_DARK}`}`,
+                    backgroundColor: `${theme === 'light' 
+                        ? `${COLORS.BACKGROUND_MAIN}` : `${COLORS.TABLE_GRID_DARK}`}`,
                     color: `${theme === 'light' ? `${COLORS.BLACK}` : 'black'}`,
                     fontSize: '20px',
                     textAlign: 'center',
@@ -56,6 +53,7 @@ const TournamentList = ({ theme }: any) => {
                 rowsPerPageOptions={[ 12 ]}
             />
         </StTableDiv>
+       
     );
 };
 

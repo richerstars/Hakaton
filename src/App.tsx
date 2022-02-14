@@ -23,6 +23,7 @@ import { GlobalStyle } from './GlobalStyles';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from './constants/theme';
 import Tournament from "./components/pages/Tournament/Tournament";
+
 const App = () =>  {
     const [theme, setTheme] = useState("light");
 
