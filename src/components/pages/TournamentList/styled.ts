@@ -7,4 +7,5 @@ export const StTableDiv = styled.div`
   max-width: 1750px;
   width: 100%;
   margin-top: 7px;
+  display: flex;
 `;

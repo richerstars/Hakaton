@@ -3,19 +3,21 @@ import { DataGrid } from '@mui/x-data-grid';
 import axios from 'axios';
 import { BACKEND_URL } from '../../../constants/url';
 import { useEffect, useState } from 'react';
-import { StTableDiv } from './styled';
 import { COLORS } from '../../../constants/colors';
+import {StTableDiv} from './styled';
+// import TextField from '@mui/material/TextField';
 
-const columns:any = [
-    { field: 'name', headerName: 'Name', width: 200,headerAlign: 'center' },
-    { field: 'description', headerName: 'Tournament description', width: 350, headerAlign: 'center', },
-    { field: 'mode', headerName: 'Mode', width: 140,headerAlign: 'center', },
-    { field: 'place', headerName: 'Place', width: 130,headerAlign: 'center', },
-    { field: 'level', headerName: 'Level', width: 170,headerAlign: 'center', },
-    { field: 'players', headerName: 'Amount ', width: 150,headerAlign: 'center', },
-    { field: 'number_of_participants', headerName: 'Players', width: 100,headerAlign: 'center', },
-    { field: 'scenario', headerName: 'Scenario', width: 180,headerAlign: 'center', },
-    { field: 'status', headerName: 'Status', width: 100,headerAlign: 'center', },
+const columns = [
+    { field: 'id', headerName: 'ID', width: 100},
+    { field: 'name', headerName: 'Name', width: 200 },
+    { field: 'description', headerName: 'Tournament description', width: 200 },
+    { field: 'mode', headerName: 'Mode',width: 140 },
+    { field: 'place', headerName: 'Place', width: 130 },
+    { field: 'level', headerName: 'Level', width: 170 },
+    { field: 'players', headerName: 'Amount ', width: 150 },
+    { field: 'number_of_participants', headerName: 'Players', width: 100 },
+    { field: 'scenario', headerName: 'Scenario', width: 180 },
+    { field: 'status', headerName: 'Status', width: 100 },
 ];
 
 const TournamentList = ({ theme }: any) => {
@@ -32,13 +34,15 @@ const TournamentList = ({ theme }: any) => {
         getTournamets();
     }, []);
     return (
+       
         <StTableDiv>
             <DataGrid
                 sx={{
                     borderColor: `${theme === 'light'
                         ? `${COLORS.BACKGROUND_HEADER_LIGHT}`
                         : `${COLORS.SEMI_PRIMARY_COLOR_SEC}`}`,
-                    backgroundColor: `${theme === 'light' ? `${COLORS.BACKGROUND_MAIN}` : `${COLORS.TABLE_GRID_DARK}`}`,
+                    backgroundColor: `${theme === 'light' 
+                        ? `${COLORS.BACKGROUND_MAIN}` : `${COLORS.TABLE_GRID_DARK}`}`,
                     color: `${theme === 'light' ? `${COLORS.BLACK}` : 'black'}`,
                     fontSize: '20px',
                     textAlign: 'center',
@@ -49,6 +53,7 @@ const TournamentList = ({ theme }: any) => {
                 rowsPerPageOptions={[ 12 ]}
             />
         </StTableDiv>
+       
     );
 };
 

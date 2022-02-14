@@ -22,6 +22,7 @@ import { useState } from 'react';
 import { GlobalStyle } from './GlobalStyles';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from './constants/theme';
+import Tournament from "./components/pages/Tournament/Tournament";
 
 const App = () =>  {
     const [theme, setTheme] = useState("light");
@@ -50,6 +51,7 @@ const App = () =>  {
                         <Route path={URL.CREATE_TOURNAMENT} element={<CreateTournament/>}/>
                         <Route path={URL.PLAYERS} element={<Players/>}/>
                         <Route path={URL.ADMIN_PAGE} element={<AdminPage/>}/>
+                        <Route path={URL.TOURNAMENT_PAGE} element={<Tournament />}/>
                     </Route>
                 </Routes>
             </ThemeProvider>

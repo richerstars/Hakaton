@@ -18,3 +18,8 @@ export const StMain = styled.main`
   width: 100%;
 `;
 
+export const StNavInputWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
