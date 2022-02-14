@@ -21,4 +21,5 @@ export const BACKEND_URL = {
     SIGN_IN: 'http://sluipgenius.pp.ua/api/user/sign-in',
     SIGN_UP: 'http://sluipgenius.pp.ua/api/user/sign-up',
     TOURNAMENT_URL: 'http://sluipgenius.pp.ua/api/tournament/get-tournament',
+    PLAYERS_URL: 'http://sluipgenius.pp.ua/api/user/get-users',
 };
