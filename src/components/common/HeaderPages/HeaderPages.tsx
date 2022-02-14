@@ -5,6 +5,9 @@ import Button from '@mui/material/Button';
 import {StSlash, StTools, StWrapperLang} from "./styled";
 import {useNavigate} from "react-router-dom";
 import {URL} from "../../../constants/url";
+import FormControlLabel from '@mui/material/FormControlLabel';
+import { MaterialUISwitch } from '../Toggler/styled';
+import FormGroup from '@mui/material/FormGroup';
 
 export interface IHeader {
     text: string,
@@ -37,7 +40,11 @@ const HeaderPages = ({toggleTheme,theme}:any) => {
                     <StSlash>|</StSlash>
                     <div>RU</div>
                 </StWrapperLang>
-                <Button size={'large'} variant={"contained"} onClick={toggleTheme}>Change theme</Button>
+                <FormGroup>
+                    <FormControlLabel
+                        control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
+                        label="Theme" onClick={toggleTheme}/>
+                </FormGroup>
             </StTools>
         </StyledHeader>
     );
