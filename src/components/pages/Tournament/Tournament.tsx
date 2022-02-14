@@ -6,12 +6,10 @@ import {StForm, StP} from "./styled";
 
 const Tournament = () => {
     const {id} = useParams();
-    console.log('work');
     const [ tournament, setTournament ] = useState({});
     const getTournamet = async () => {
         try {
             const { data } = await axios.get(BACKEND_URL.TOURNAMENT_URL, { params: { id: `${id}` } });
-            console.log(data);
             setTournament(data);
         } catch (error) {
             return false;

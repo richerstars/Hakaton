@@ -23,9 +23,11 @@ import { GlobalStyle } from './GlobalStyles';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from './constants/theme';
 import Tournament from "./components/pages/Tournament/Tournament";
+import Statistic from './components/pages/AdminPage/Statistic/Statistic';
+import Saveload from './components/pages/AdminPage/SaveLoad/Saveload';
 
 const App = () =>  {
-    const [theme, setTheme] = useState("light");
+    const [theme, setTheme] = useState("dark");
 
     const switchTheme = () => {
         theme === "light" ? setTheme("dark") : setTheme("light");
@@ -52,6 +54,8 @@ const App = () =>  {
                         <Route path={URL.PLAYERS} element={<Players/>}/>
                         <Route path={URL.ADMIN_PAGE} element={<AdminPage/>}/>
                         <Route path={URL.TOURNAMENT_PAGE} element={<Tournament />}/>
+                        <Route path={URL.STATISTIC} element={<Statistic />}/>
+                        <Route path={URL.SAVE_LOAD} element={<Saveload />}/>
                     </Route>
                 </Routes>
             </ThemeProvider>

@@ -11,7 +11,6 @@ const columns = [
     { field: 'id', headerName: 'ID', width: 100},
     { field: 'name', headerName: 'Name', width: 200 },
     { field: 'description', headerName: 'Tournament description', width: 200 },
-    { field: 'mode', headerName: 'Mode',width: 140 },
     { field: 'place', headerName: 'Place', width: 130 },
     { field: 'level', headerName: 'Level', width: 170 },
     { field: 'players', headerName: 'Amount ', width: 150 },
