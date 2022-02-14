@@ -5,7 +5,6 @@ import { BACKEND_URL } from '../../../constants/url';
 import { useEffect, useState } from 'react';
 import { COLORS } from '../../../constants/colors';
 import {StTableDiv} from './styled';
-// import TextField from '@mui/material/TextField';
 
 const columns = [
     { field: 'id', headerName: 'ID', width: 100},
@@ -33,7 +32,6 @@ const TournamentList = ({ theme }: any) => {
         getTournamets();
     }, []);
     return (
-       
         <StTableDiv>
             <DataGrid
                 sx={{

@@ -51,7 +51,7 @@ const App = () =>  {
                     <Route element={<LayoutPages theme={theme} toggleTheme={switchTheme}/>}>
                         <Route path={URL.TOURNAMENT_LIST} element={<TournamentList theme={theme}/>}/>
                         <Route path={URL.CREATE_TOURNAMENT} element={<CreateTournament/>}/>
-                        <Route path={URL.PLAYERS} element={<Players/>}/>
+                        <Route path={URL.PLAYERS} element={<Players theme={theme}/>}/>
                         <Route path={URL.ADMIN_PAGE} element={<AdminPage/>}/>
                         <Route path={URL.TOURNAMENT_PAGE} element={<Tournament />}/>
                         <Route path={URL.STATISTIC} element={<Statistic />}/>
