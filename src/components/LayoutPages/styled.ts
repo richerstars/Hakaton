@@ -7,13 +7,13 @@ export const StPageWrapper = styled.main`
   align-items: flex-start;
   padding: 50px;
   gap: 30px;
-  background-color:${COLORS.BACKGROUND_MAIN}
+  background-color:${({theme}) => theme === 'light' ? `${COLORS.BACKGROUND_MAIN}`: `${COLORS.BACKGROUND_MAIN_DARK}`};
 `;
 
 export const StMain = styled.main`
   min-height: calc(100vh - 144px);
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: flex-start;
   width: 100%;
 `;

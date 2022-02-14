@@ -12,11 +12,11 @@ export interface IHeader {
     link: string,
 }
 
-const Header = () => {
+const Header = ({toggleTheme,theme}:any) => {
     const { pathname } = useLocation();
     const navigate = useNavigate();
     const handleNavigate = () => navigate(pathname ==='/signIn'? URL.SIGN_UP : URL.SIGN_IN);
-    return <StyledHeader>
+    return <StyledHeader theme={theme}>
         <StWrapper>
             <Logo/>
             {pathname !== '/'&&
@@ -27,12 +27,11 @@ const Header = () => {
                 <StWrapperLang>
                     <div>EN</div>
                     <StSlash>|</StSlash>
-                    <div>RUS</div>
+                    <div>RU</div>
                 </StWrapperLang>
-                <Button size={'large'} variant={"contained"}>Change theme</Button>
+                <Button size={'large'} variant={"contained"} onClick={toggleTheme}>Change theme</Button>
             </StTools>
         </StWrapper>
-
     </StyledHeader>;
 };
 

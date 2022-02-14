@@ -5,14 +5,13 @@ import Button from '@mui/material/Button';
 import {StSlash, StTools, StWrapperLang} from "./styled";
 import {useNavigate} from "react-router-dom";
 import {URL} from "../../../constants/url";
-// import {NavigateContext} from "../../../context/NavigateContext";
 
 export interface IHeader {
     text: string,
     link: string,
 }
 
-const HeaderPages = () => {
+const HeaderPages = ({toggleTheme,theme}:any) => {
     const navigate = useNavigate();
     const handleLogIn = () => navigate(URL.SIGN_IN);
     const handleSignIn = () => navigate(URL.SIGN_UP);
@@ -21,7 +20,7 @@ const HeaderPages = () => {
         navigate(URL.DEFAULT_PAGE);
     };
     return(
-        <StyledHeader>
+        <StyledHeader theme={theme}>
             <Logo/>
             <StWrapperLink>
                 {(document.cookie.length > 6)
@@ -36,9 +35,9 @@ const HeaderPages = () => {
                 <StWrapperLang>
                     <div>EN</div>
                     <StSlash>|</StSlash>
-                    <div>RUS</div>
+                    <div>RU</div>
                 </StWrapperLang>
-                <Button size={'large'} variant={"contained"}>Change theme</Button>
+                <Button size={'large'} variant={"contained"} onClick={toggleTheme}>Change theme</Button>
             </StTools>
         </StyledHeader>
     );

@@ -17,4 +17,7 @@ export const COLORS = {
     SHADOW_MAIN: '#3b5183',
     TOP_LINEAR:'rgba(68, 50, 179, 0.8)',
     BOTTOM_LINEAR: 'rgba(187, 42, 223, 0.64)',
+    BACKGROUND_MAIN_DARK: '#272727',
+    BACKGROUND_HEADER_LIGHT:'#A827C3',
+    TABLE_GRID_DARK: '#84b0a5',
 };

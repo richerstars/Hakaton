@@ -24,16 +24,21 @@ export const linkForAdmin: Array<TButton> = [
     },
     {
         id: 2,
+        url: '/createTournament',
+        title: 'Create Tournament',
+    },
+    {
+        id: 3,
         url: '/players',
         title: 'PLAYERS',
     },
     {
-        id: 3,
+        id: 4,
         url: '/statistic',
         title: 'STATISTIC',
     },
     {
-        id: 4,
+        id: 5,
         url: '/saveLoad',
         title: 'Save/Load',
     }

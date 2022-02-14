@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {COLORS} from "../../constants/colors";
+import { COLORS } from '../../constants/colors';
 
 export const StWrapper = styled.div`
   //&:first-child{
@@ -7,9 +7,10 @@ export const StWrapper = styled.div`
   //}
 `;
 
+// eslint-disable-next-line no-undef
 export const StMain = styled.main`
   min-height: calc(100vh - 144px);
   display: grid;
   place-items: center;
-  background-color:${COLORS.BACKGROUND_MAIN} ;
+  background-color:${({theme}) => theme === 'light' ? `${COLORS.BACKGROUND_MAIN}`: `${COLORS.BACKGROUND_MAIN_DARK}`};
 `;
