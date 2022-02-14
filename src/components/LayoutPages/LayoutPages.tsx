@@ -4,11 +4,11 @@ import {StMain, StPageWrapper} from './styled';
 import HeaderPages from "../common/HeaderPages/HeaderPages";
 import NavBar from "../common/NavBar/NavBar";
 
-const LayoutPages = () => {
+const LayoutPages = ({toggleTheme,theme}:any) => {
     return (
         <>
-            <HeaderPages />
-            <StPageWrapper>
+            <HeaderPages toggleTheme={toggleTheme} theme={theme}/>
+            <StPageWrapper theme={theme}>
                 <NavBar/>
                 <StMain>
                     <Outlet/>

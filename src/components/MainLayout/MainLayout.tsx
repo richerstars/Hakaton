@@ -3,11 +3,11 @@ import { Outlet } from 'react-router-dom';
 import Header from '../common/Header/Header';
 import {StMain, StWrapper} from './styled';
 
-const MainLayout = () => {
+const MainLayout = ({toggleTheme,theme}:any) => {
     return (
         <StWrapper>
-            <Header/>
-            <StMain>
+            <Header toggleTheme={toggleTheme} theme={theme}/>
+            <StMain theme={theme}>
                 <Outlet/>
             </StMain>
         </StWrapper>

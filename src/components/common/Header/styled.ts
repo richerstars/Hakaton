@@ -9,7 +9,10 @@ export const StyledHeader = styled.header`
   //padding: 20px 0;
   height: 144px;
   position: relative;
-  background: linear-gradient(180deg, ${COLORS.TOP_LINEAR} 3.43%, ${COLORS.BOTTOM_LINEAR} 58.35%);
+  background-color: ${({ theme }) => theme === 'light'
+        ? `${COLORS.BACKGROUND_HEADER_LIGHT}`
+        : `${COLORS.BACKGROUND_MAIN_DARK}`};
+  box-shadow: 0px 1px 20px 9px #3b5183;
 `;
 
 export const StWrapper = styled.div`
@@ -27,7 +30,7 @@ export const StWrapperLang = styled.div`
   align-items: center;
   color: ${COLORS.WHITE};
   min-width: 120px;
-  font-size: 40px;
+  font-size: 30px;
 `;
 
 export const StSlash = styled.div`

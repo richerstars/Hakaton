@@ -32,13 +32,13 @@ const AcceptInvitation = () => {
     const {notification, showNotification} = useContext(NotificationContext);
     const [searchParams,]  = useSearchParams();
     const token = searchParams.get("token");
-
     return (
         <>
             { notification.type && <Notification message={notification.message} type={notification.type} />}
             <StForm
                 onSubmit={handleSubmit((values) => {
                     const res = getFormattedDate(values.date_of_birthday);
+                    console.log(res);
                     HelperTokenBackFunc({
                         first_name: values.first_name,
                         last_name: values.last_name,

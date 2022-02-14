@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {COLORS} from "../../../constants/colors";
+import { COLORS } from "../../../constants/colors";
 
 export const StyledHeader = styled.header`
   display: flex;
@@ -9,7 +9,10 @@ export const StyledHeader = styled.header`
   margin: 0 auto;
   padding: 20px 0;
   height: 144px;
-  background: linear-gradient(180deg, ${COLORS.TOP_LINEAR} 3.43%, ${COLORS.BOTTOM_LINEAR} 58.35%);
+  background-color: ${({ theme }) => theme === 'light'
+        ? `${COLORS.BACKGROUND_HEADER_LIGHT}`
+        : `${COLORS.BACKGROUND_MAIN_DARK}`};
+  box-shadow: inset 6px 1px 20px 2px #67c9ae;
 `;
 
 export const StWrapperMode = styled.header`
@@ -41,7 +44,7 @@ export const StWrapperLang = styled.div`
   align-items: center;
   color: ${COLORS.WHITE};
   min-width: 120px;
-  font-size: 40px;
+  font-size: 30px;
 `;
 
 export const StSlash = styled.div`

@@ -2,6 +2,9 @@ import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import axios from 'axios';
 import { BACKEND_URL } from '../../../constants/url';
+import { useEffect, useState } from 'react';
+import { StTableDiv } from './styled';
+import { COLORS } from '../../../constants/colors';
 import { useEffect,useState } from 'react';
 import {StTableDiv, StWrapperInput} from './styled';
 import TextField from '@mui/material/TextField';
@@ -19,11 +22,11 @@ const columns = [
     { field: 'status', headerName: 'Status', width: 100 },
 ];
 
-const TournamentList = () => {
-    const [tableData,setTableData]=useState([]);
+const TournamentList = ({ theme }: any) => {
+    const [ tableData, setTableData ] = useState([]);
     const getTournamets = async () => {
         try {
-            const {data} = await axios.get(BACKEND_URL.TOURNAMENT_URL);
+            const { data } = await axios.get(BACKEND_URL.TOURNAMENT_URL);
             setTableData(data);
         } catch (error) {
             return false;
@@ -31,20 +34,28 @@ const TournamentList = () => {
     };
     useEffect(() => {
         getTournamets();
-    },[]);
+    }, []);
     return (
         <StWrapperInput>
             {/*<TextField id="outlined-basic" label="Outlined" variant="outlined" />*/}
-            <StTableDiv>
-                <DataGrid
-                    rows={tableData}
-                    columns={columns}
-                    pageSize={12}
-                    rowsPerPageOptions={[12]}
-                />
-            </StTableDiv>
-        </StWrapperInput>
 
+        <StTableDiv>
+            <DataGrid
+                sx={{
+                    borderColor: `${theme === 'light'
+                        ? `${COLORS.BACKGROUND_HEADER_LIGHT}`
+                        : `${COLORS.SEMI_PRIMARY_COLOR_SEC}`}`,
+                    backgroundColor: `${theme === 'light' ? `${COLORS.BACKGROUND_MAIN}` : `${COLORS.TABLE_GRID_DARK}`}`,
+                    color: `${theme === 'light' ? `${COLORS.BLACK}` : 'black'}`,
+                    fontSize: '20px',
+                    textAlign: 'center',
+                }}
+                rows={tableData}
+                columns={columns}
+                pageSize={12}
+                rowsPerPageOptions={[ 12 ]}
+            />
+        </StTableDiv>
     );
 };
 
