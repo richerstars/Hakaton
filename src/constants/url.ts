@@ -11,6 +11,7 @@ export const URL = {
     CREATE_TOURNAMENT: '/createTournament',
     PLAYERS: '/players',
     ADMIN_PAGE: '/adminPage',
+    TOURNAMENT_PAGE: '/tournament/:id'
 };
 
 export const BACKEND_URL = {

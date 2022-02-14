@@ -18,6 +18,7 @@ import TournamentList from "./components/pages/TournamentList/TournamentList";
 import CreateTournament from "./components/pages/CreateTournament/CreateTournament";
 import Players from "./components/pages/Players/Players";
 import AdminPage from "./components/pages/AdminPage/AdminPage";
+import Tournament from "./components/pages/Tournament/Tournament";
 
 const App = () =>  (
     <Routes>
@@ -36,6 +37,7 @@ const App = () =>  (
             <Route path={URL.CREATE_TOURNAMENT} element={<CreateTournament/>}/>
             <Route path={URL.PLAYERS} element={<Players/>}/>
             <Route path={URL.ADMIN_PAGE} element={<AdminPage/>}/>
+            <Route path={URL.TOURNAMENT_PAGE} element={<Tournament />}/>
         </Route>
     </Routes>
 );

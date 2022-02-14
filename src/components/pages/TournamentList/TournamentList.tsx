@@ -3,9 +3,11 @@ import { DataGrid } from '@mui/x-data-grid';
 import axios from 'axios';
 import { BACKEND_URL } from '../../../constants/url';
 import { useEffect,useState } from 'react';
-import { StTableDiv } from './styled';
+import {StTableDiv, StWrapperInput} from './styled';
+import TextField from '@mui/material/TextField';
 
 const columns = [
+    { field: 'id', headerName: 'ID', width: 100},
     { field: 'name', headerName: 'Name', width: 200 },
     { field: 'description', headerName: 'Tournament description', width: 200 },
     { field: 'mode', headerName: 'Mode',width: 140 },
@@ -14,7 +16,7 @@ const columns = [
     { field: 'players', headerName: 'Amount ', width: 150 },
     { field: 'number_of_participants', headerName: 'Players', width: 100 },
     { field: 'scenario', headerName: 'Scenario', width: 180 },
-    { field: 'status', headerName: 'Status', width: 100 }
+    { field: 'status', headerName: 'Status', width: 100 },
 ];
 
 const TournamentList = () => {
@@ -23,7 +25,7 @@ const TournamentList = () => {
         try {
             const {data} = await axios.get(BACKEND_URL.TOURNAMENT_URL);
             setTableData(data);
-        }catch (error) {
+        } catch (error) {
             return false;
         }
     };
@@ -31,14 +33,18 @@ const TournamentList = () => {
         getTournamets();
     },[]);
     return (
-        <StTableDiv>
-            <DataGrid
-                rows={tableData}
-                columns={columns}
-                pageSize={12}
-                rowsPerPageOptions={[12]}
-            />
-        </StTableDiv>
+        <StWrapperInput>
+            {/*<TextField id="outlined-basic" label="Outlined" variant="outlined" />*/}
+            <StTableDiv>
+                <DataGrid
+                    rows={tableData}
+                    columns={columns}
+                    pageSize={12}
+                    rowsPerPageOptions={[12]}
+                />
+            </StTableDiv>
+        </StWrapperInput>
+
     );
 };
 

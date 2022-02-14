@@ -6,3 +6,8 @@ export const StTableDiv = styled.div`
   height: 751px;
   width: 100%;
 `;
+
+export const StWrapperInput = styled.div`
+ display: flex;
+  flex-direction: column;
+`;

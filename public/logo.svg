@@ -1,0 +1,27 @@
+<svg width="351" height="141" viewBox="0 0 351 141" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.9" filter="url(#filter0_d_61_4)">
+<path d="M347 66.5C347 103.227 270.217 133 175.5 133C80.7832 133 4 103.227 4 66.5C4 29.7731 80.7832 0 175.5 0C270.217 0 347 29.7731 347 66.5Z" fill="#143D4E" fill-opacity="0.21" shape-rendering="crispEdges"/>
+</g>
+<path d="M171.675 85.5159V118.698H182.185V85.5159H171.675Z" fill="#CFC761" stroke="#CFC761" stroke-width="2.1896" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M140.826 30.5522C140.826 30.5522 122.666 23.0776 122.732 37.7183C122.732 37.7183 122.555 50.6536 132.821 61.2486C132.821 61.2486 140.826 70.61 154.684 74.1477C154.684 74.1477 150.848 69.2675 148.919 65.5665C148.919 65.5665 136.302 59.6884 131.779 47.5151C131.779 47.5151 123.774 30.8424 140.826 36.7568V30.5522Z" fill="#AFA75E" stroke="#AFA75E" stroke-width="4.3185" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M176.925 86.4299C186.06 86.4299 193.621 79.6447 193.621 79.6447C203.023 71.8436 208.145 58.5999 208.145 58.5999C214.864 44.195 212.425 21.8984 212.425 21.8984H176.925H141.424C141.424 21.8984 138.985 44.195 145.682 58.5999C145.682 58.5999 150.804 71.8436 160.206 79.6447C160.228 79.6447 167.789 86.4299 176.925 86.4299Z" fill="#F4E660" stroke="#F4E660" stroke-width="2.1896" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M213.134 30.5522C213.134 30.5522 231.294 23.0776 231.228 37.7183C231.228 37.7183 231.405 50.6536 221.139 61.2486C221.139 61.2486 213.134 70.61 199.276 74.1477C199.276 74.1477 203.112 69.2675 205.041 65.5665C205.041 65.5665 217.658 59.6884 222.181 47.5151C222.181 47.5151 230.186 30.8424 213.134 36.7568V30.5522Z" fill="#F4E660" stroke="#F4E660" stroke-width="2.1896" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M208.522 111.375H145.327V118.941H208.522V111.375Z" fill="#F4E660" stroke="#F4E660" stroke-width="2.1896" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M187.745 108.563H166.082V111.375H187.745V108.563Z" fill="#F4E660" stroke="#F4E660" stroke-width="2.1896" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M141.424 21.8984H151.358C151.358 21.8984 148.431 43.3242 155.438 58.1463C155.438 58.1463 159.54 74.4742 176.06 86.4117C176.06 86.4117 161.78 86.4117 150.804 69.3581C150.804 69.3581 143.309 61.176 141.003 42.5441C141.003 42.5441 140.116 26.6516 141.424 21.8984Z" fill="#CFC761" stroke="#CFC761" stroke-width="2.1896" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M171.448 85.9945C172.401 86.0852 173.31 86.1578 174.219 86.2122C175.129 86.2666 176.038 86.3029 176.947 86.3029H177.279H177.612C177.834 86.3029 178.055 86.3029 178.299 86.2848C178.743 86.2666 179.208 86.2485 179.652 86.2122C180.561 86.1759 181.47 86.0489 182.424 85.9945C181.603 86.3936 180.716 86.702 179.785 86.8653C179.319 86.9742 178.854 87.0104 178.366 87.083C177.9 87.1193 177.412 87.1556 176.925 87.1374C175.971 87.1374 175.018 87.0467 174.086 86.8653C173.155 86.6839 172.246 86.4299 171.448 85.9945Z" fill="#AFA75E"/>
+<path d="M165.86 110.777H187.967" stroke="#AFA75E" stroke-width="4.3185" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M148.964 111.375H145.327V118.941H148.964V111.375Z" fill="#CFC761" stroke="#CFC761" stroke-width="2.1896" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<defs>
+<filter id="filter0_d_61_4" x="0" y="0" width="351" height="141" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_61_4"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_61_4" result="shape"/>
+</filter>
+</defs>
+</svg>
