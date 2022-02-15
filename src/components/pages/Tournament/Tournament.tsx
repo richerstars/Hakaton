@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {BACKEND_URL} from "../../../constants/url";
 import {useParams} from 'react-router-dom';
-import {StForm, StP} from "./styled";
 
 const Tournament = () => {
     const {id} = useParams();
@@ -18,14 +17,10 @@ const Tournament = () => {
     useEffect(() => {
         getTournamet();
     }, []);
-
+    console.log(tournament);
     return (
         <div>
-            {Object.keys(tournament).length
-                ?'Single Tournament'
-                :<StForm>
-                    <StP>Tournament with the selected id does not exist. Select the correct tournament id</StP>
-                </StForm>}
+            Single Tournament
         </div>
     );
 };
