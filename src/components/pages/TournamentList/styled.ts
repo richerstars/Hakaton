@@ -9,3 +9,8 @@ export const StTableDiv = styled.div`
   margin-top: 7px;
   display: flex;
 `;
+
+export const StButtonWrapper = styled.div`
+  display: flex;
+  gap: 30px;
+`;

@@ -32,14 +32,4 @@ export const linkForAdmin: Array<TButton> = [
         url: '/players',
         title: 'PLAYERS',
     },
-    {
-        id: 4,
-        url: '/statistic',
-        title: 'STATISTIC',
-    },
-    {
-        id: 5,
-        url: '/saveLoad',
-        title: 'Save/Load',
-    }
 ];
