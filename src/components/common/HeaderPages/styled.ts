@@ -10,9 +10,9 @@ export const StyledHeader = styled.header`
   padding: 20px 0;
   height: 144px;
   background-color: ${({ theme }) => theme === 'light'
-        ? `${COLORS.BACKGROUND_HEADER_LIGHT}`
+        ? `radial-gradient(${COLORS.WHITE}, ${COLORS.SHADOW_HEAD})`
         : `${COLORS.BACKGROUND_MAIN_DARK}`};
-  box-shadow: inset 6px 1px 20px 2px #67c9ae;
+  box-shadow: inset 6px 5px 100px 20px ${COLORS.SHADOW_HEAD};
 `;
 
 export const StWrapperMode = styled.header`

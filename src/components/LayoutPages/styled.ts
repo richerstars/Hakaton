@@ -7,7 +7,8 @@ export const StPageWrapper = styled.main`
   align-items: flex-start;
   padding: 50px;
   gap: 30px;
-  background-color:${({theme}) => theme === 'light' ? `${COLORS.BACKGROUND_MAIN}`: `${COLORS.BACKGROUND_MAIN_DARK}`};
+  background-color:${({theme}) => theme === 'light' ? `${COLORS.TABLE_GRID_DARK}`: `${COLORS.BACKGROUND_MAIN_DARK}`};
+  box-shadow: inset 0px 2px 10px 1px ${COLORS.SHADOW_HEAD};
 `;
 
 export const StMain = styled.main`

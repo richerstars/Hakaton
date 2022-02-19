@@ -15,7 +15,7 @@ export const StHeadLiner = styled.hr`
 export const StForm = styled.form`
   display: block;
   padding: 45px;
-  background-color: ${COLORS.PRIMARY_COLOR_LIGHT};
+  background-color: ${COLORS.FORMS_DARK};
   text-align: center;
   width: 450px;
   margin: 0 auto;

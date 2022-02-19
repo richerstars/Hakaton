@@ -1,10 +1,10 @@
 import styled from 'styled-components';
+import { COLORS } from "../../../constants/colors";
 
 export const LogoImg = styled.img`
-  width: 300px;
-  //height: 140px;
-  position: absolute;
+  width: 270px;
   position: absolute;
   top: 12px;
-  left: 41.5%;
+  left: 43.0%;
+  // background: radial-gradient(${COLORS.WHITE}, ${COLORS.SHADOW_HEAD});
 `;

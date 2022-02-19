@@ -12,5 +12,6 @@ export const StMain = styled.main`
   min-height: calc(100vh - 144px);
   display: grid;
   place-items: center;
-  background-color:${({theme}) => theme === 'light' ? `${COLORS.BACKGROUND_MAIN}`: `${COLORS.BACKGROUND_MAIN_DARK}`};
+  background-color:${({theme}) => theme === 'light' ? `${COLORS.WHITE}`: `${COLORS.BACKGROUND_MAIN_DARK}`};
+  box-shadow: inset 0px 2px 10px 1px ${COLORS.SHADOW_HEAD};
 `;

@@ -14,7 +14,7 @@ import {NotificationContext} from "../../context/NotificationContent";
 import {HelperRole} from '../../helpers/FormtInfo';
 import { TContext } from '../../Types/Types';
 
-const SignIn = () => {
+const SignIn = ({theme}:any) => {
     const {
         handleSubmit,
         formState: {errors},
@@ -30,7 +30,7 @@ const SignIn = () => {
     return (
         <>
             { notification.type && <Notification message={notification.message} type={notification.type} />}
-            <StForm
+            <StForm theme={theme}
                 onSubmit={handleSubmit((values) => {
                     HelperRole(values, showNotification, navigate,BACKEND_URL.SIGN_IN,URL.TOURNAMENT_LIST);})}>
                 <h1>Log In</h1>

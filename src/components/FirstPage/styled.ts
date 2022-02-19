@@ -4,10 +4,11 @@ import {COLORS} from "../../constants/colors";
 export const StyledFirstPage = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: ${COLORS.PRIMARY_COLOR_LIGHT};
+  background-color: ${COLORS.HR_LIGHT};
   box-shadow: 0px 1px 20px 9px ${COLORS.SHADOW_MAIN};
   border-radius: 15px;
-  color: #ffffff;
+  color: ${COLORS.WHITE};
+  text-shadow: 1px 1px 4px ${COLORS.BLACK};
 `;
 
 export const StyledFirstPageText = styled.div`

@@ -156,10 +156,10 @@ const TournamentList = ({ theme }: any) => {
                     sx={{
                         borderColor: `${theme === 'light'
                             ? `${COLORS.BACKGROUND_HEADER_LIGHT}`
-                            : `${COLORS.SEMI_PRIMARY_COLOR_SEC}`}`,
+                            : `${COLORS.PRIMARY_COLOR}`}`,
                         backgroundColor: `${theme === 'light'
                             ? `${COLORS.BACKGROUND_MAIN}` : `${COLORS.TABLE_GRID_DARK}`}`,
-                        color: `${theme === 'light' ? `${COLORS.BLACK}` : 'black'}`,
+                        color: `${theme === 'light' ? `${COLORS.BACKGROUND_MAIN_DARK}` : `${COLORS.BLACK}`}`,
                         fontSize: '20px',
                         textAlign: 'center',
                     }}
