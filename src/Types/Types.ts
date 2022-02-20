@@ -38,3 +38,18 @@ export type TLabel = {
     value: string,
     label:string,
 }
+
+export type TRow = {
+    description: string,
+    id: number|string,
+    last_registration_date: string,
+    level: string,
+    mode: string,
+    name: string,
+    number_of_participants: number|string,
+    place: string,
+    players: number|string,
+    scenario: string,
+    start_date: string,
+    status: string,
+}

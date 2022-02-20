@@ -20,6 +20,6 @@ export const GlobalStyle = createGlobalStyle`
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: "Raleway", sans-serif;   
-    overflow: hidden;
+    //overflow: hidden;
   }
 `;

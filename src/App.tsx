@@ -14,7 +14,7 @@ import MainLayout from './components/MainLayout/MainLayout';
 import LayoutPages from "./components/LayoutPages/LayoutPages";
 import {URL} from './constants/url';
 import FirstPage from "./components/FirstPage/FirstPage";
-import TournamentList from "./components/pages/TournamentList/TournamentList";
+// import TournamentList from "./components/pages/TournamentList/TournamentList";
 import CreateTournament from "./components/pages/CreateTournament/CreateTournament";
 import Players from "./components/pages/Players/Players";
 import AdminPage from "./components/pages/AdminPage/AdminPage";
@@ -25,6 +25,7 @@ import { darkTheme, lightTheme } from './constants/theme';
 import Tournament from "./components/pages/Tournament/Tournament";
 import Statistic from './components/pages/AdminPage/Statistic/Statistic';
 import Saveload from './components/pages/AdminPage/SaveLoad/Saveload';
+import TournamentsData from "./components/pages/TournamentList/TournamentsData";
 
 const App = () =>  {
     const [theme, setTheme] = useState("dark");
@@ -49,7 +50,7 @@ const App = () =>  {
                         <Route path={URL.ERROR_FORGOT_PASSWORD} element={<ErrorForgotPassword />} />
                     </Route>
                     <Route element={<LayoutPages theme={theme} toggleTheme={switchTheme}/>}>
-                        <Route path={URL.TOURNAMENT_LIST} element={<TournamentList theme={theme}/>}/>
+                        <Route path={URL.TOURNAMENT_LIST} element={<TournamentsData/>}/>
                         <Route path={URL.CREATE_TOURNAMENT} element={<CreateTournament/>}/>
                         <Route path={URL.PLAYERS} element={<Players theme={theme}/>}/>
                         <Route path={URL.ADMIN_PAGE} element={<AdminPage/>}/>
