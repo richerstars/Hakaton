@@ -82,7 +82,7 @@ const columns = [
                 if (e.key === 'Enter') {
                     await addPlayers(playerSingle?.id);
                     handleClose();
-                    location.reload();
+                    // location.reload();
                 }
             };
 
@@ -148,6 +148,7 @@ const TournamentList = ({ theme }: any) => {
     useEffect(() => {
         getTournaments();
     }, []);
+    // console.log("tableData", tableData);
     return (
         <StTableDiv>
             {isLoading
