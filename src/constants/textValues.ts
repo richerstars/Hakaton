@@ -21,4 +21,5 @@ export const HINTS = {
     EMAIL_HINT: 'Standard email settings',
     PASSWORD_HINT: '8-20 symbols, 1 upper letter, 1 number',
     LOGIN: 'First symbol char, max symbols 1-20, no Special symbols',
+    CREATE_TOURNAMENT_SUCCESS: 'You successfully created a tournament!',
 };

@@ -1,8 +1,16 @@
 import styled from 'styled-components';
 
 export const StFilters = styled.div`
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2vw;
+`;
+
+export const StWrapper = styled.div`
   display: flex;
-  gap: 30px;
   flex-direction: column;
-  padding: 200px;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
 `;
