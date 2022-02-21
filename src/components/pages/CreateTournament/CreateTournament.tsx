@@ -101,7 +101,7 @@ const CreateTournament = () => {
                     <FormControl>
                         <InputLabel>Number of participants</InputLabel>
                         <Select sx={{minWidth: 180}} value={state.participants} label="participants"
-                                onChange={handleChangeParticipants}>
+                            onChange={handleChangeParticipants}>
                             <MenuItem value={4}>4</MenuItem>
                             <MenuItem value={8}>8</MenuItem>
                         </Select>
@@ -109,7 +109,7 @@ const CreateTournament = () => {
                     <FormControl>
                         <InputLabel>Scenario</InputLabel>
                         <Select sx={{minWidth: 180}} value={state.scenario} label="scenario"
-                                onChange={handleChangeScenario}>
+                            onChange={handleChangeScenario}>
                             <MenuItem value='one match confrontation'>1-match conformation</MenuItem>
                             <MenuItem value='two match confrontation'>2-match conformation</MenuItem>
                             <MenuItem value='to three wins'>to 3 wins</MenuItem>

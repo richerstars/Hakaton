@@ -8,11 +8,12 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
-import {StButtonWrapper} from "./styled";
+import {StButtonWrapper} from "../styled";
 import axios from "axios";
-import {BACKEND_URL} from "../../../constants/url";
+import {BACKEND_URL} from "../../../../constants/url";
 import {useNavigate} from "react-router-dom";
-import {TRow} from "../../../Types/Types";
+import {TRow} from "../../../../Types/Types";
+import {StButton, StTable, StTd, StTh, StThead, StTr} from "./styled";
 
 const style = {
     position: 'absolute',
@@ -78,25 +79,26 @@ const Datatable: React.FC<TProps> = ({data, sortBy, direction, getTournaments}) 
     };
 
     return (
-        <table>
-            <thead>
-                <tr>
+        <StTable>
+            <StThead>
+                <StTr>
                     {columns.map((heading) => {
                         if (heading === 'edit') {
-                            return <th key={heading}>{heading}</th>;
+                            return <StTh key={heading}>{heading}</StTh>;
                         }
-                        return <th key={heading}>{heading}
-                            <button onClick={() => sortBy(heading)}>{`Sorting by ${direction}`}</button>
-                        </th>;}
+                        return <StTh key={heading}>
+                            <p>{heading}</p>
+                            <StButton onClick={() => sortBy(heading)}>{`Sort by ${direction}`}</StButton>
+                        </StTh>;}
                     )}
-                </tr>
-            </thead>
+                </StTr>
+            </StThead>
             <tbody>
-                {data.map ((row: TRow) => <tr key={row.id}>
+                {data.map ((row: TRow) => <StTr key={row.id}>
                     {columns.map(column => {
                         if (column === 'edit') {
                             return (
-                                <td key={row.id} >{row.mode !== 'cup' &&
+                                <StTd key={row.id} >{row.mode !== 'cup' &&
                                         <StButtonWrapper>
                                             <IconButton
                                                 onClick={() => navigate(`/tournament/${row.id}`)}
@@ -144,14 +146,14 @@ const Datatable: React.FC<TProps> = ({data, sortBy, direction, getTournaments}) 
                                                 </Box>
                                             </Modal>
                                         </StButtonWrapper>}
-                                </td>
+                                </StTd>
                             );
                         }
                         return <td style={{maxWidth: '200px'}} key={uuid()}>{row[column]}</td>;
                     })}
-                </tr>)}
+                </StTr>)}
             </tbody>
-        </table>
+        </StTable>
     );
 };
 

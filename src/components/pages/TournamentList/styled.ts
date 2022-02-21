@@ -14,3 +14,10 @@ export const StButtonWrapper = styled.div`
   display: flex;
   gap: 30px;
 `;
+
+export const StTableWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+`;
