@@ -98,7 +98,7 @@ const Datatable: React.FC<TProps> = ({data, sortBy, direction, getTournaments}) 
                     {columns.map(column => {
                         if (column === 'edit') {
                             return (
-                                <StTd key={row.id} >{row.mode !== 'cup' &&
+                                <StTd key={row.id} >{(document.cookie === 'role=user' || document.cookie === 'role=admin') && row.mode !== 'cup' &&
                                         <StButtonWrapper>
                                             <IconButton
                                                 onClick={() => navigate(`/tournament/${row.id}`)}
