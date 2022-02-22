@@ -22,7 +22,7 @@ export const BACKEND_URL = {
     NEW_PASSWORD: 'http://sluipgenius.pp.ua/api/user/change-password',
     SIGN_IN: 'http://sluipgenius.pp.ua/api/user/sign-in',
     SIGN_UP: 'http://sluipgenius.pp.ua/api/user/sign-up',
-    TOURNAMENT_URL: 'http://sluipgenius.pp.ua/api/tournament/get-tournament',
+    TOURNAMENT_URL: 'http://sluipgenius.pp.ua/api/tournament/get-tournament?perPage=5',
     CREATE_TOURNAMENT_URL: 'http://sluipgenius.pp.ua/api/tournament/create',
     PLAYERS_URL: 'http://sluipgenius.pp.ua/api/user/get-users',
     ADD_USER_TO_TOURNAMENT: 'http://sluipgenius.pp.ua/api/tournament/add-user-to-tournament',

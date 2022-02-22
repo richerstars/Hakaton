@@ -6,6 +6,7 @@ import {useEffect, useState} from "react";
 import TextField from '@mui/material/TextField';
 import MainLoader from "../../common/Loader/MainLoader";
 import {TRow} from "../../../Types/Types";
+import Pagination from "../../common/Pagination/Pagination";
 
 const TournamentsData = () => {
     const [data, setData] = React.useState([]);
@@ -13,7 +14,7 @@ const TournamentsData = () => {
 
     const getTournaments = async () => {
         try {
-            const { data } = await axios.get(BACKEND_URL.TOURNAMENT_URL);
+            const { data: {data} } = await axios.get(BACKEND_URL.TOURNAMENT_URL);
             setData(data);
         } finally {
             setIsLoading(false);
@@ -30,6 +31,7 @@ const TournamentsData = () => {
 
     const search = (rows: Array<TRow>) => {
         const columns = rows[0] && Object.keys(rows[0]);
+        // @ts-ignore
         return rows.filter((row) => columns.some(
             (column) => row[column].toString().toLowerCase().indexOf(q.toLowerCase()) > -1)
         );
@@ -38,6 +40,7 @@ const TournamentsData = () => {
     const sortBy = (key: string) => {
         if (typeof data[0][key] === 'string') {
             setData(athletes.sort((a, b) => {
+                // @ts-ignore
                 return direction === 'asc'
                     ? a[key].toLowerCase() < b[key].toLowerCase() ? -1 : 1
                     : a[key].toLowerCase() > b[key].toLowerCase() ? -1 : 1;
@@ -70,6 +73,7 @@ const TournamentsData = () => {
                             getTournaments={getTournaments}
                         />
                     </div>
+                    <Pagination/>
                 </div>
             }
         </>
