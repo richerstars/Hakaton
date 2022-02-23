@@ -4,39 +4,16 @@ import Row from "./Table/Row";
 import Button from "@mui/material/Button";
 import {BACKEND_URL} from "../../../constants/url";
 import axios from "axios";
+import {StTable} from "./styled";
+import {TableData} from "../../../Types/Types";
 
-type TableData = {
-    "id": number,
-    "score": number,
-    "user": {
-        "session": [
-            {
-                "expired_at": string
-            }
-        ],
-        "id": number,
-        "login": string,
-        "email": string,
-        "password": string,
-        "role": "user" | "admin",
-        "first_name": string,
-        "last_name": string,
-        "date_of_birthday": string,
-        "gender": string,
-        "confirmation_send_at": string,
-        "activated_at": string,
-        "games": number,
-        "wins": number,
-        "draws": number,
-        "loses": number,
-        "cup_wins": number
-    }};
 type TProps = {
-    id: string | undefined
+    id: string | undefined,
+    theme: string
 };
 
 
-const TornamentTable: React.FC<TProps> = ({id}) => {
+const TornamentTable: React.FC<TProps> = ({id, theme}) => {
 
     const [table, setTable] = useState<Array<TableData>>([]);
     useEffect( ()=> {
@@ -63,22 +40,25 @@ const TornamentTable: React.FC<TProps> = ({id}) => {
 
 
     return (
-        <div>
+        <StTable>
             {table.length
                 ? (<>
-                    <Header/>
+                    <Header theme={theme}/>
                     {
                         table.map((el) => <Row
                             player={[el.user.login,
                                 el.score.toString(),
                                 el.user.games.toString(),
                                 el.user.wins.toString() ]}
-                            key={el.user.login} />)
+                            key={el.user.login}
+                            theme={theme}
+                        />)
                     }</>)
-                : <Button variant="contained" onClick={handleClick}> Start Tournament </Button>
+                :  document.cookie === 'role=admin'
+                    ? <Button variant="contained" onClick={handleClick}> Start Tournament </Button>
+                    : <h1>Tournament not started </h1>
             }
-
-        </div>
+        </StTable>
     );
 };
 

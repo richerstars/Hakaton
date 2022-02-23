@@ -1,47 +1,59 @@
 import React, {useEffect, useState} from 'react';
 import Button from "@mui/material/Button";
 import {StRow, StCardInfo, StCard, StInput} from './styled';
+import axios from "axios";
+import {BACKEND_URL} from "../../../../constants/url";
+import {TUser} from "../../../../Types/Types";
 
 type TProps = {
     "id": number,
-    firstUser: string,
-    secondUser: string,
     "first_user_score":number,
     "second_user_score": number,
     "date_match": string,
-    "status": string
+    "status": string,
+    theme: string,
+    first_user: TUser,
+    second_user: TUser
 }
 
 const SinglMatch: React.FC<TProps> = ({
+    id,
     first_user_score: firstUserScoreProps,
     second_user_score :secondUserScoreProps,
     date_match: dateMatch,
-    firstUser,
-    secondUser}) => {
+    first_user,
+    second_user,
+    theme}) => {
 
-    const [state, setState] = useState({firstUserScore: '0', secondUserScore: '0'});
+    const [state, setState] = useState({firstUserScore: 0, secondUserScore: 0});
 
     useEffect(() => {
-        setState({firstUserScore: firstUserScoreProps.toString(), secondUserScore: secondUserScoreProps.toString()  });
+        setState({firstUserScore: firstUserScoreProps, secondUserScore: secondUserScoreProps  });
     },[]);
 
-    const firstUserChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => setState({...state, firstUserScore: event.target.value});
-    const secondUserChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => setState({...state, secondUserScore: event.target.value});
-
+    const firstUserChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => setState({...state, firstUserScore: Number(event.target.value)});
+    const secondUserChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => setState({...state, secondUserScore: Number(event.target.value)});
+    const buttonHandleClick = () => {axios.post(BACKEND_URL.SET_MATCH_RESULT, {
+        match_id: id,
+        first_user_score: state.firstUserScore,
+        second_user_score: state.secondUserScore
+    }); };
+    const isAdmin = document.cookie === 'role=admin';
     return (
-        <StCard>
+        <StCard theme={theme}>
             <StCardInfo>
-                {new Date(dateMatch).toISOString()}
+                {new Date(dateMatch).toLocaleString()}
                 <StRow>
-                    <p>{firstUser}</p>
-                    <StInput onChange={firstUserChangeInput} value={state.firstUserScore} />
+                    <p>{first_user.login}</p>
+                    <StInput readOnly={!isAdmin} theme={theme} onChange={firstUserChangeInput} value={state.firstUserScore} />
                 </StRow>
                 <StRow>
-                    <p>{secondUser}</p>
-                    <StInput onChange={secondUserChangeInput} value={state.secondUserScore} />
+                    <p>{second_user.login}</p>
+                    <StInput readOnly={!isAdmin} theme={theme} onChange={secondUserChangeInput} value={state.secondUserScore} />
                 </StRow>
             </StCardInfo>
-            <Button variant="contained" > Set result </Button>
+            {isAdmin ?  <Button onClick={buttonHandleClick} variant="contained" > Set result </Button> : null }
+
         </StCard>
     );
 };

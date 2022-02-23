@@ -1,44 +1,16 @@
 import React, {useEffect, useState} from 'react';
-// import axios from "axios";
-// import {BACKEND_URL} from "../../../constants/url";
+import axios from "axios";
+import {BACKEND_URL} from "../../../constants/url";
 import SinglMatch from "./SinglMatch/SinglMatch";
 import {StMatches} from './styled';
+import {TMatch} from "../../../Types/Types";
 
 type TProps = {
-    id: string | undefined
+    id: string | undefined,
+    theme: string
 };
 
-const data = [
-    {
-        "id": 3,
-        firstUser: 'Andew',
-        secondUser: 'Vasia',
-        "first_user_score": 0,
-        "second_user_score": 0,
-        "date_match": "2022-02-13T20:43:39.581Z",
-        "status": "coming"
-    },
-    {
-        "id": 4,
-        firstUser: 'Shapikso',
-        secondUser: 'Oon1k',
-        "first_user_score": 0,
-        "second_user_score": 0,
-        "date_match": "2022-02-13T20:43:39.588Z",
-        "status": "coming"
-    }];
-
-type TMatch = {
-    "id": number,
-    firstUser: string,
-    secondUser: string,
-    "first_user_score":number,
-    "second_user_score": number,
-    "date_match": string,
-    "status": string
-}
-
-const Matches: React.FC<TProps> = ({id}) => {
+const Matches: React.FC<TProps> = ({id, theme}) => {
 
     const [matches, setMatches] = useState<TMatch[]>([]);
     useEffect( ()=> {
@@ -47,8 +19,7 @@ const Matches: React.FC<TProps> = ({id}) => {
 
     const getTournamentTable = async () => {
         try {
-            //const { data } = await axios.get(BACKEND_URL.TOURNAMENT_TABLE, { params: { tournament_id: `${id}` } });
-            console.log(id);
+            const { data } = await axios.get(BACKEND_URL.GET_MATCHE_BY_CHAMPIONSHIP, { params: { tournament_id: `${id}` } });
             setMatches(data);
         } catch (error) {
             return false;
@@ -56,8 +27,8 @@ const Matches: React.FC<TProps> = ({id}) => {
     };
     return (
         <StMatches>
-            {matches.map((el) => {
-                return <SinglMatch key={el.id} {...el}/>;
+            {matches?.map((el) => {
+                return <SinglMatch theme={theme} key={el.id} {...el}/>;
             })}
         </StMatches>
     );

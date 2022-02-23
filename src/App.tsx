@@ -53,7 +53,7 @@ const App = () =>  {
                         <Route path={URL.CREATE_TOURNAMENT} element={<CreateTournament/>}/>
                         <Route path={URL.PLAYERS} element={<Players theme={theme}/>}/>
                         <Route path={URL.ADMIN_PAGE} element={<AdminPage/>}/>
-                        <Route path={URL.TOURNAMENT_PAGE} element={<Tournament />}/>
+                        <Route path={URL.TOURNAMENT_PAGE} element={<Tournament theme={theme}/>}/>
                         <Route path={URL.STATISTIC} element={<Statistic />}/>
                         <Route path={URL.SAVE_LOAD} element={<Saveload />}/>
                     </Route>

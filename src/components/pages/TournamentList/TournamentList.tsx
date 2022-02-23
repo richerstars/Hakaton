@@ -139,7 +139,7 @@ const TournamentList = ({ theme }: any) => {
     const [isLoading, setIsLoading] = useState (true);
     const getTournaments = async () => {
         try {
-            const { data } = await axios.get(BACKEND_URL.TOURNAMENT_URL);
+            const { data: {data} } = await axios.get(BACKEND_URL.TOURNAMENT_URL);
             setTableData(data);
         } finally {
             setIsLoading(false);

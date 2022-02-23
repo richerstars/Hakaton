@@ -4,9 +4,13 @@ import Cell from './Cell';
 import {StRow} from './styled';
 const header = ['login','score', 'games', 'wins'];
 
-const Header = () => (
+type TProps = {
+    theme: string
+};
+
+const Header = ({theme}: TProps) => (
     <StRow>
-        { header.map((el, index) =>  <Cell title={el} key={index}/> ) }
+        { header.map((el, index) =>  <Cell theme={theme} title={el} key={index}/> ) }
     </StRow>
 );
 
